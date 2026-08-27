@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In / Register — ClassmatePlus</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="login">
+
+  <section class="section">
+    <div class="container">
+      <div class="form-shell">
+        <div class="form-tabs">
+          <button id="tab-login" class="active" onclick="switchTab('login')">Log In</button>
+          <button id="tab-register" onclick="switchTab('register')">Register</button>
+        </div>
+
+        <!-- LOG IN -->
+        <form id="login-form" novalidate>
+          <div class="field" id="login-email-field">
+            <label for="login-email">Campus email</label>
+            <input type="email" id="login-email" placeholder="you@campus.edu" required>
+            <div class="error-msg">Enter a valid email address.</div>
+          </div>
+          <div class="field" id="login-password-field">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="••••••••" required>
+            <div class="error-msg">Password must be at least 8 characters.</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Log In</button>
+          <p class="form-note">No account yet? <a href="#" onclick="switchTab('register'); return false;" style="color:var(--coral-dark); font-weight:600;">Register instead</a></p>
+        </form>
+
+        <!-- REGISTER -->
+        <form id="register-form" novalidate style="display:none;">
+          <div class="field" id="reg-name-field">
+            <label for="reg-name">Full name</label>
+            <input type="text" id="reg-name" placeholder="Jordan Reyes" required>
+            <div class="error-msg">Enter your name.</div>
+          </div>
+          <div class="field" id="reg-email-field">
+            <label for="reg-email">Campus email</label>
+            <input type="email" id="reg-email" placeholder="you@campus.edu" required>
+            <div class="error-msg">Enter a valid email address.</div>
+          </div>
+          <div class="field" id="reg-password-field">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" placeholder="At least 8 characters" required>
+            <div class="error-msg">Password must be at least 8 characters.</div>
+          </div>
+          <div class="field" id="reg-offer-field">
+            <label for="reg-offer">Skills I can teach</label>
+            <input type="text" id="reg-offer" placeholder="e.g. Excel Modeling, Guitar Basics" required>
+            <div class="error-msg">List at least one skill you can offer.</div>
+          </div>
+          <div class="field" id="reg-want-field">
+            <label for="reg-want">Skills I want to learn</label>
+            <input type="text" id="reg-want" placeholder="e.g. Photoshop, Public Speaking" required>
+            <div class="error-msg">List at least one skill you're hoping to learn.</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+          <p class="form-note">Already have an account? <a href="#" onclick="switchTab('login'); return false;" style="color:var(--coral-dark); font-weight:600;">Log in instead</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

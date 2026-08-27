@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Students — ClassmatePlus</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="browse-students">
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <p class="eyebrow-line">Everyone on the board</p>
+      <h2 style="font-family:var(--font-display); font-size:2.1rem; color:var(--board);">Browse Students</h2>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <div>
+          <label for="search">Search</label>
+          <input type="text" id="search" placeholder="Name, major, or a skill they offer...">
+        </div>
+        <span id="result-count" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-soft);"></span>
+      </div>
+      <div class="card-grid" id="students-grid"></div>
+      <div class="empty-state" id="empty-state" style="display:none; color: var(--ink-soft);">
+        <h3 style="color:var(--board);">No students match that search</h3>
+        <p style="color:var(--ink-soft);">Try a different name or skill keyword.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/browse.js"></script>
+  <script>initBrowseStudents();</script>
+</body>
+</html>

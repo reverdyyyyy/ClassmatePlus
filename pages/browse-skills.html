@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Skills — ClassmatePlus</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="browse-skills">
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <p class="eyebrow-line">The whole board</p>
+      <h2 style="font-family:var(--font-display); font-size:2.1rem; color:var(--board);">Browse Skills</h2>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <div>
+          <label for="search">Search</label>
+          <input type="text" id="search" placeholder="e.g. Photoshop, tutoring, guitar...">
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="">All categories</option>
+          </select>
+        </div>
+        <span id="result-count" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-soft);"></span>
+      </div>
+
+      <div class="board-panel">
+        <div class="card-grid" id="skills-grid"></div>
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <h3>No pins match that search</h3>
+          <p>Try a different keyword or clear the category filter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Swap request modal -->
+  <div class="modal-overlay" id="swap-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h3>Propose a swap</h3>
+      <p id="modal-context" style="color:var(--ink-soft); font-size:0.9rem;"></p>
+      <div class="field">
+        <label for="offer-select">Offer one of your skills</label>
+        <select id="offer-select"></select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary btn-block" id="modal-send">Send request</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/browse.js"></script>
+  <script>initBrowseSkills();</script>
+</body>
+</html>

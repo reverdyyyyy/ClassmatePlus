@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile — ClassmatePlus</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="browse-students">
+
+  <section class="section">
+    <div class="container" id="profile-root">
+      <!-- filled by profile.js -->
+    </div>
+  </section>
+
+  <!-- Swap request modal (reused) -->
+  <div class="modal-overlay" id="swap-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h3>Propose a swap</h3>
+      <p id="modal-context" style="color:var(--ink-soft); font-size:0.9rem;"></p>
+      <div class="field">
+        <label for="offer-select">Offer one of your skills</label>
+        <select id="offer-select"></select>
+      </div>
+      <div class="field">
+        <label for="want-select">For their...</label>
+        <select id="want-select"></select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary btn-block" id="modal-send">Send request</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/profile.js"></script>
+</body>
+</html>

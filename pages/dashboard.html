@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — ClassmatePlus</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="dashboard">
+
+  <section class="section">
+    <div class="container">
+      <div class="profile-head" style="margin-bottom:8px;">
+        <div class="avatar" id="me-avatar"></div>
+        <div>
+          <h1 id="me-name" style="font-size:1.7rem;"></h1>
+          <div class="campus-tag" id="me-campus"></div>
+        </div>
+      </div>
+      <p style="color:var(--ink-soft); max-width:60ch; margin-top:8px;" id="me-bio"></p>
+
+      <div class="dash-tabs">
+        <button class="active" data-tab="skills">My Skills</button>
+        <button data-tab="matches">Potential Matches</button>
+        <button data-tab="requests">Swap Requests</button>
+        <button data-tab="swaps">My Swaps</button>
+      </div>
+
+      <!-- MY SKILLS -->
+      <div class="dash-panel active" id="panel-skills">
+        <div class="profile-cols" style="margin-top:0;">
+          <div>
+            <h3 style="font-family:var(--font-display); color:var(--board);">Skills I offer</h3>
+            <ul class="skill-list" id="my-offered"></ul>
+            <h3 style="font-family:var(--font-display); color:var(--board); margin-top:24px;">Skills I want</h3>
+            <ul class="skill-list" id="my-wanted"></ul>
+          </div>
+          <div class="side-card">
+            <h3>Add a skill</h3>
+            <div class="field">
+              <label for="new-skill">New skill you can teach</label>
+              <input type="text" id="new-skill" placeholder="e.g. Video Editing">
+            </div>
+            <button class="btn btn-primary btn-block" id="add-skill-btn">Add to my profile</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- POTENTIAL MATCHES -->
+      <div class="dash-panel" id="panel-matches">
+        <p style="color:var(--ink-soft); margin-bottom:20px;">
+          Students whose "wanted" skills overlap with what you offer — these are suggested, not
+          requested yet.
+        </p>
+        <div id="matches-list"></div>
+      </div>
+
+      <!-- SWAP REQUESTS -->
+      <div class="dash-panel" id="panel-requests">
+        <p style="color:var(--ink-soft); margin-bottom:20px;">
+          Requests you've sent or received that are still pending.
+        </p>
+        <div id="requests-list"></div>
+      </div>
+
+      <!-- MY SWAPS -->
+      <div class="dash-panel" id="panel-swaps">
+        <p style="color:var(--ink-soft); margin-bottom:20px;">
+          Accepted and completed swaps.
+        </p>
+        <div id="swaps-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

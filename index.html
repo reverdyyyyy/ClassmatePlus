@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClassmatePlus — Your AI can't do everything. Hire a student.</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <section class="corkboard">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Campus-only · No money involved</span>
+        <div class="pin-card" style="max-width:520px; transform:rotate(-1.5deg);">
+          <h1 style="font-family:var(--font-display); font-size:2.3rem; margin:0 0 6px; color:var(--board); line-height:1.2;">
+            Your AI can't do everything.
+          </h1>
+          <p class="tagline-2" style="margin:0;">Hire a student.</p>
+        </div>
+        <p class="sub">ClassmatePlus is a corkboard for trading what you're good at for what you're not.
+          <strong>No money, no invoices</strong> — just an Excel wizard trading with a Photoshop
+          wizard, campus-wide.</p>
+        <div class="hero-actions">
+          <a href="pages/browse-skills.html" class="btn btn-primary">Browse Skills</a>
+          <a href="pages/login-register.html" class="btn btn-outline">Post What You Offer</a>
+        </div>
+      </div>
+
+      <div class="hero-card pin-card">
+        <span class="tag">Now Trading</span>
+        <h1>"Excel Modeling for Logo Design?"</h1>
+        <p style="font-size:0.9rem; color:var(--ink-soft); margin:0 0 6px;">
+          Priya (CS) ↔ Marcus (Design) — matched in 40 seconds.
+        </p>
+        <p class="scribble">— pinned this morning, corkboard #4</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow-line">Three steps, no middleman</p>
+          <h2>How it works</h2>
+        </div>
+        <a href="pages/how-it-works.html" class="btn btn-outline btn-sm">Full details →</a>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <h3>Pin what you offer</h3>
+          <p>List the skills you're actually good at — Excel, guitar, essay editing, whatever it is.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <h3>Browse what you need</h3>
+          <p>Search the board for the skill you're missing, filtered by category or keyword.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <h3>Propose a swap</h3>
+          <p>Send a request offering your skill for theirs. If they accept, you work it out directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow-line">Fresh off the board</p>
+          <h2>Featured skills</h2>
+        </div>
+        <a href="pages/browse-skills.html" class="btn btn-outline btn-sm">See all →</a>
+      </div>
+      <div class="board-panel">
+        <div class="card-grid" id="featured-skills"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow-line">Real people, real trades</p>
+          <h2>Featured students</h2>
+        </div>
+        <a href="pages/browse-students.html" class="btn btn-outline btn-sm">See all →</a>
+      </div>
+      <div class="card-grid" id="featured-students"></div>
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    const featuredSkillIds = ["k3", "k1", "k8", "k16"];
+    const skillsEl = document.getElementById("featured-skills");
+    featuredSkillIds.forEach(id => {
+      const skill = SKILLS.find(s => s.id === id);
+      const owner = getOwner(skill.ownerId);
+      skillsEl.insertAdjacentHTML("beforeend", `
+        <div class="skill-card" onclick="location.href='pages/student-profile.html?id=${owner.id}'">
+          <span class="tag">${skill.category}</span>
+          <h3>${skill.name}</h3>
+          <p>${skill.description}</p>
+          <div class="owner">Offered by ${owner.name}</div>
+        </div>
+      `);
+    });
+
+    const featuredStudentIds = ["s2", "s6", "s7"];
+    const studentsEl = document.getElementById("featured-students");
+    featuredStudentIds.forEach(id => {
+      const st = STUDENTS.find(s => s.id === id);
+      studentsEl.insertAdjacentHTML("beforeend", `
+        <div class="student-card" onclick="location.href='pages/student-profile.html?id=${st.id}'">
+          <span class="tag">${st.campus}</span>
+          <h3>${st.name}</h3>
+          <p>${st.bio}</p>
+          <div class="owner">Offers: ${st.skillsOffered.slice(0,2).join(", ")}</div>
+        </div>
+      `);
+    });
+  </script>
+</body>
+</html>
