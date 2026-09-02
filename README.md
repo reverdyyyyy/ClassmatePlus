@@ -38,14 +38,7 @@ for what a real API will return later.
 - Toast notifications for actions (swap requests, add/remove skill,
   accept/decline) instead of `alert()`.
 
-## What's next (Milestone 2 — backend)
 
-- Replace `data.js` arrays with real API calls (students, skills, requests).
-- Real authentication instead of the current "any valid-looking form submits
-  successfully" demo behavior.
-- Persist swap request state server-side instead of in a page-load JS array
-  (right now, refreshing the Dashboard resets any accept/decline you made).
-- Real image upload for avatars (currently just initials).
 
 ## How to run it
 
